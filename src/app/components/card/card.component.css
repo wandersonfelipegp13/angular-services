@@ -1,0 +1,51 @@
+.card {
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 8px;
+
+  box-shadow: 8px 8px 16px 0px rgba(255, 255, 255, 0.75);
+}
+
+.card-title > h3 {
+  width: 100%;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.card-body {
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  height: 320px;
+  min-height: 320px;
+  max-height: 320px;
+  background-color: #222;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card-body > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-stats {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.card-stats-type {
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #DDD;
+  background-color: rgb(175, 0, 0);
+}
