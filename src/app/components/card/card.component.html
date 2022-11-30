@@ -1,17 +1,17 @@
 <div class="card">
   <div class="card-title">
-    <h3>{{ pokemonName }}</h3>
+    <h3>{{ pokemon.name }}</h3>
   </div>
   <div class="card-body">
     <img
-      src="{{ pokemonPhoto }}"
-      alt="{{ pokemonName }}"
-      title="{{ pokemonName }}"
+      src="{{ pokemon.sprites.front_default }}"
+      alt="{{ pokemon.name }}"
+      title="{{ pokemon.name }}"
     />
   </div>
   <div class="card-stats">
-    <span *ngFor="let type of pokemonTypes" class="card-stats-type">{{
-      type
+    <span *ngFor="let types of pokemon.types" class="card-stats-type">{{
+      types.type.name.toUpperCase()
     }}</span>
   </div>
 </div>
