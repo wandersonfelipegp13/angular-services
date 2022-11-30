@@ -7,13 +7,15 @@
   padding: 16px;
   border-radius: 8px;
 
-  box-shadow: 8px 8px 16px 0px rgba(255, 255, 255, 0.75);
+  background-color: #FFF;
+  box-shadow: 8px 8px 16px 0px rgba(0, 0, 0, 0.75);
 }
 
 .card-title > h3 {
   width: 100%;
   margin-bottom: 8px;
   text-align: center;
+  color: #000;
 }
 
 .card-body {
@@ -23,7 +25,7 @@
   height: 320px;
   min-height: 320px;
   max-height: 320px;
-  background-color: #222;
+  background-color: #ffcb05;
   border-radius: 16px;
   overflow: hidden;
 }

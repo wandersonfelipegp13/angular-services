@@ -1,2 +1,14 @@
-<app-card></app-card>
+<div class="container">
+  <div class="pokemon-seach">
+    <input
+      type="text"
+      placeholder="Pokemon Name"
+      (focusout)="setSearchPokemon($any($event.target).value)"
+    />
+  </div>
+  <div class="pokemon-card">
+    <app-card pokemonSeach="{{ pokemonName }}"></app-card>
+  </div>
+</div>
+
 <router-outlet></router-outlet>

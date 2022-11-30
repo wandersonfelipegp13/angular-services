@@ -10,21 +10,40 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class CardComponent implements OnInit {
   pokemon: PokemonData;
 
+  @Input()
+  pokemonSeach: string;
+
   constructor(private pokemonService: PokemonService) {
+    this.pokemonSeach = '';
     this.pokemon = {
       id: '0',
       name: 'Pokemon Name',
       sprites: {
         front_default: 'https://i.ibb.co/tYNpZTg/nopokemon.png',
       },
-      types: [],
+      types: [
+        {
+          slot: 0,
+          type: {
+            name: '???',
+          url: ''
+          }
+        }
+      ],
     };
   }
 
-  ngOnInit(): void {
-    this.pokemonService.getPokemonByName('pikachu').subscribe({
+  ngOnInit(): void {}
+
+  ngOnChanges(): void {
+    if (this.pokemonSeach != '') this.getPokemon(this.pokemonSeach);
+  }
+
+  getPokemon(pokemonName: string) {
+    this.pokemonService.getPokemonByName(pokemonName).subscribe({
       next: (res) => {
         let name = res.name;
+
         name = name.charAt(0).toUpperCase() + name.slice(1);
 
         this.pokemon = {
@@ -36,7 +55,7 @@ export class CardComponent implements OnInit {
           types: res.types,
         };
       },
-      error: (res) => console.log(res),
+      error: (res) => console.log('not found'),
     });
   }
 }
